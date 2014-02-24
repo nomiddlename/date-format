@@ -12,6 +12,13 @@ usage
         format.asString(new Date()); //defaults to ISO8601 format
         format.asString('hh:mm:ss.SSS', new Date()); //just the time
 
+or
+
+        var format = require('date-format');
+        format(new Date());
+        format('hh:mm:ss.SSS', new Date());
+
+
 Format string can be anything, but the following letters will be replaced (and leading zeroes added if necessary):
 * dd - date.getDate()
 * MM - date.getMonth() + 1
