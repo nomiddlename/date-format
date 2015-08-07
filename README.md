@@ -49,10 +49,10 @@ format('hh:mm:ss.SSS', new Date());
 ```
 
 Format string can be anything, but the following letters will be replaced (and leading zeroes added if necessary):
-* DDDD - `date.getDay()`
+* DDDD - `date.getDay()` or `dayNames[date.getDay()]`
 * dd - `date.getDate()`
 * MM - `date.getMonth() + 1`
-* MMMM - `date.getMonth()`
+* MMMM - `date.getMonth()` or `monthNames[date.getMonth()]`
 * yy - `date.getFullYear().toString().substring(2, 4)`
 * yyyy - `date.getFullYear()`
 * hh - `date.getHours()`
