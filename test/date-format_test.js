@@ -1,6 +1,6 @@
 "use strict";
 var should = require('should')
-, dateFormat = require('../lib/date-format');
+, dateFormat = require('../');
 
 describe('date-format', function() {
   var date = new Date(2010, 0, 11, 14, 31, 30, 5);
