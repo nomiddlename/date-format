@@ -1,0 +1,32 @@
+{
+  "name": "date-format",
+  "version": "0.0.3",
+  "description": "Formatting Date objects as strings since 2013",
+  "main": "lib/date-format.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nomiddlename/date-format.git"
+  },
+  "keywords": [
+    "date",
+    "format",
+    "string",
+    "escape"
+  ],
+  "author": "Gareth Jones <gareth.jones@sensis.com.au>",
+  "contributors": [{
+    "name": "Bruno Lesieur",
+    "url": "http://www.lesieur.name/",
+    "email": "bruno.lesieur@gmail.com"
+  }],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "bf59015ab6c9e86454b179374f29debbdb403522",
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.12.0"
+  }
+}
