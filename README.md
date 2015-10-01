@@ -1,7 +1,7 @@
 date-format
 ===========
 
-nrgode.js formatting of Date objects as strings. Probably exactly the same as some other library out there.
+node.js formatting of Date objects as strings. Probably exactly the same as some other library out there.
 
 ```sh
 npm install date-format
