@@ -12,6 +12,7 @@ usage
 
 ```js
 var format = require('date-format');
+format.asString(); //defaults to ISO8601 format and current date.
 format.asString(new Date()); //defaults to ISO8601 format
 format.asString('hh:mm:ss.SSS', new Date()); //just the time
 ```
@@ -20,6 +21,7 @@ or
 
 ```js
 var format = require('date-format');
+format(); //defaults to ISO8601 format and current date.
 format(new Date());
 format('hh:mm:ss.SSS', new Date());
 ```
