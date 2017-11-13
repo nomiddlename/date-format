@@ -24,7 +24,7 @@ describe('date_format', function() {
     });
 
     it('should default to the ISO8601 format', function() {
-        dateFormat.asString(date).should.eql('2010-01-11 14:31:30.005');
+        dateFormat.asString(date).should.eql('2010-01-11T14:31:30.005');
     });
 
     it('should provide a ISO8601 with timezone offset format', function() {
