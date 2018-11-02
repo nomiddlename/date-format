@@ -35,7 +35,7 @@ describe('date_format', function() {
         };
 
         dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, tzDate)
-          .should.eql('2010-01-11T14:31:30.005+1100');
+            .should.eql('2010-01-11T14:31:30.005+1100');
 
         tzDate = createFixedDate();
         tzDate.setMinutes((tzDate.getMinutes() - tzDate.getTimezoneOffset()) + 120);
@@ -44,7 +44,7 @@ describe('date_format', function() {
         };
 
         dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, tzDate)
-          .should.eql('2010-01-11T14:31:30.005-0200');
+            .should.eql('2010-01-11T14:31:30.005-0200');
     });
 
     it('should provide a just-the-time format', function() {
