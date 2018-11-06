@@ -25,10 +25,9 @@
   "readmeFilename": "README.md",
   "gitHead": "bf59015ab6c9e86454b179374f29debbdb403522",
   "devDependencies": {
-    "eslint": "^3.12.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-mocha": "^4.8.0",
-    "mocha": "^3.2.0",
-    "should": "^11.1.2"
+    "eslint": "^5.5.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
   }
 }
