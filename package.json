@@ -1,6 +1,6 @@
 {
   "name": "date-format",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Formatting Date objects as strings since 2013",
   "main": "lib/index.js",
   "repository": {
