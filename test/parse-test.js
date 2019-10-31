@@ -124,10 +124,6 @@ describe("dateFormat.parse", function() {
     });
 
     describe("should match all the date parts", function() {
-      // Test cases without timezone are invalid as the result varies depends on
-      // OS timezone and the hour the test cases are executed.
-      // These use cases should not be supported in the first place.  Using
-      // them will ensure all your time filled with sadness.
       it("works with dd", function() {
         var date = dateFormat.parse("dd", "21");
         verifyLocalDate(date, { day: 21 });
