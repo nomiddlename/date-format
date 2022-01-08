@@ -38,11 +38,11 @@ Format string can be anything, but the following letters will be replaced (and l
 * mm - `date.getMinutes()`
 * ss - `date.getSeconds()`
 * SSS - `date.getMilliseconds()`
-* O - timezone offset in +hm format (note that time will still be local if displaying offset)
+* O - timezone offset in ±hhmm format (note that time will still be local if displaying offset)
 
 Built-in formats:
 * `format.ISO8601_FORMAT` - `2017-03-14T14:10:20.391` (local time used)
-* `format.ISO8601_WITH_TZ_OFFSET_FORMAT` - `2017-03-14T14:10:20.391+1100` (local + TZ used)
+* `format.ISO8601_WITH_TZ_OFFSET_FORMAT` - `2017-03-14T14:10:20.391+11:00` (local + TZ used)
 * `format.DATETIME_FORMAT` - `14 03 2017 14:10:20.391` (local time used)
 * `format.ABSOLUTETIME_FORMAT` - `14:10:20.391` (local time used)
 
