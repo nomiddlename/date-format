@@ -159,8 +159,8 @@ describe("dateFormat.parse", function() {
         verifyDate(date, { hours: 7, minutes: 23 });
       });
 
-      it("works with hh:mm O (+0930)", function() {
-        var date = dateFormat.parse("hh:mm O", "05:23 +0930");
+      it("works with hh:mm O (+09:30)", function() {
+        var date = dateFormat.parse("hh:mm O", "05:23 +09:30");
         verifyDate(date, { hours: 19, minutes: 53 });
       });
     });
