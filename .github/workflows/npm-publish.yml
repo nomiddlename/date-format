@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm test
   
-  update-version:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -27,22 +27,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: npm ci
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          npm version ${{ github.event.milestone.title }}
-          git push && git push --tags
-      
-  publish-npm:
-    needs: update-version
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm version ${{ github.event.milestone.title }}
+      - run: git push && git push --tags
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
