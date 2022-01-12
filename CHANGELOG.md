@@ -1,5 +1,9 @@
 # log4js-node changelog
 
+## 4.0.1
+
+- is exactly the same as 4.0.0 and is a re-published 4.0.0 to npm
+
 ## 4.0.0
 
 - [Fix timezone format to include colon separator](https://github.com/nomiddlename/date-format/pull/27) - thanks [@peteriman](https://github.com/peteriman)
