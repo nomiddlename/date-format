@@ -1,4 +1,4 @@
-# log4js-node changelog
+# Changelog
 
 ## 4.0.1
 
