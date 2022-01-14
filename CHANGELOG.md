@@ -1,5 +1,14 @@
 # date-format Changelog
 
+## 4.0.2
+
+- [Not to publish misc files to NPM](https://github.com/nomiddlename/date-format/pull/39) - thanks [@peteriman](https://github.com/peteriman)
+- CHANGELOG.md
+  - [Removed "log4js" from title of CHANGELOG.md](https://github.com/nomiddlename/date-format/pull/37) - thanks [@joshuabremerdexcom](https://github.com/joshuabremerdexcom)
+  - [Added "date-format" to title of CHANGELOG.md](https://github.com/nomiddlename/date-format/commit/64a95d0386853692d7d65174f94a0751e775f7ce#diff-06572a96a58dc510037d5efa622f9bec8519bc1beab13c9f251e97e657a9d4ed) - thanks [@peteriman](https://github.com/peteriman)
+- Updated dependencies - thanks [@peteriman](https://github.com/peteriman)
+  - [eslint-plugin-mocha from 5.3.0 to 10.0.3](https://github.com/nomiddlename/date-format/pull/38) 
+
 ## 4.0.1
 
 - is exactly the same as 4.0.0 and is a re-published 4.0.0 to npm
