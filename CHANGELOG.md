@@ -1,5 +1,11 @@
 # date-format Changelog
 
+## 4.0.3
+
+- [100% test coverage](https://github.com/nomiddlename/date-format/pull/42) - thanks [@peteriman](https://github.com/peteriman)
+- Updated dependencies - thanks [@peteriman](https://github.com/peteriman)
+  - [eslint from 8.6.0 to 8.7.0 and mocha from 9.1.3 to 9.1.4](https://github.com/nomiddlename/date-format/pull/41) 
+
 ## 4.0.2
 
 - [Not to publish misc files to NPM](https://github.com/nomiddlename/date-format/pull/39) - thanks [@peteriman](https://github.com/peteriman)
@@ -19,8 +25,8 @@
   - [test: have a test case for timezone with colon](https://github.com/nomiddlename/date-format/pull/32) - thanks [@peteriman](https://github.com/peteriman)
 - [Docs: Updated README.md with more examples and expected output](https://github.com/nomiddlename/date-format/pull/33) - thanks [@peteriman](https://github.com/peteriman)
 - Updated dependencies
-  - [should-util from 1.0.0 to 1.0.1](https://github.com/nomiddlename/date-format/pull/31) 
-  - [eslint from 5.16.0 to 8.6.0 and mocha from 5.2.0 to 9.1.3](https://github.com/nomiddlename/date-format/pull/30) 
+  - [should-util from 1.0.0 to 1.0.1](https://github.com/nomiddlename/date-format/pull/31) - thanks [@peteriman](https://github.com/peteriman)
+  - [eslint from 5.16.0 to 8.6.0 and mocha from 5.2.0 to 9.1.3](https://github.com/nomiddlename/date-format/pull/30) - thanks [@peteriman](https://github.com/peteriman)
   - [acorn from 6.2.0 to 6.4.2](https://github.com/nomiddlename/date-format/pull/29)
   - [lodash from 4.17.14 to 4.17.21](https://github.com/nomiddlename/date-format/pull/26)
 
