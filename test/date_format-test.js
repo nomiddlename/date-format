@@ -44,6 +44,14 @@ describe('date_format', function() {
 
         dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, tzDate)
             .should.eql('2010-01-11T14:31:30.005-02:00');
+
+        tzDate = createFixedDate();
+        tzDate.getTimezoneOffset = function () {
+            return 0;
+        };
+
+        dateFormat.asString(dateFormat.ISO8601_WITH_TZ_OFFSET_FORMAT, tzDate)
+            .should.eql('2010-01-11T14:31:30.005Z');
     });
 
     it('should provide a just-the-time format', function() {

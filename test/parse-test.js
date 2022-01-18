@@ -163,6 +163,11 @@ describe("dateFormat.parse", function() {
         var date = dateFormat.parse("hh:mm O", "05:23 +09:30");
         verifyDate(date, { hours: 19, minutes: 53 });
       });
+
+      it("works with hh:mm O (Z)", function() {
+        var date = dateFormat.parse("hh:mm O", "05:23 Z");
+        verifyDate(date, { hours: 5, minutes: 23 });
+      });
     });
   });
 
