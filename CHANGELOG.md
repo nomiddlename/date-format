@@ -1,5 +1,12 @@
 # date-format Changelog
 
+## 4.0.4
+
+- Updated dependencies - thanks [@peteriman](https://github.com/peteriman)
+  - [eslint from 8.8.0 to 8.10.0 and mocha from 9.2.0 to 9.2.1](https://github.com/nomiddlename/date-format/pull/46) 
+  - [eslint from 8.7.0 to 8.8.0 and mocha from 9.1.4 to 9.2.0](https://github.com/nomiddlename/date-format/pull/45) 
+  - [package-lock.json](https://github.com/nomiddlename/date-format/pull/44) 
+
 ## 4.0.3
 
 - [100% test coverage](https://github.com/nomiddlename/date-format/pull/42) - thanks [@peteriman](https://github.com/peteriman)
