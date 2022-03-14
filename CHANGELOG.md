@@ -1,5 +1,14 @@
 # date-format Changelog
 
+## 4.0.5
+
+- [chore(test): better test coverage instead of ignoring](https://github.com/nomiddlename/date-format/pull/48) - thanks [@peteriman](https://github.com/peteriman)
+- [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/49) - thanks [@peteriman](https://github.com/peteriman)
+  - eslint from 8.10.0 to 8.11.0
+  - mocha from 9.2.1 to 9.2.2
+  - package-lock.json
+- [chore(docs): updated README.md with badges](https://github.com/nomiddlename/date-format/pull/50) thanks [@peteriman](https://github.com/peteriman)
+
 ## 4.0.4
 
 - Updated dependencies - thanks [@peteriman](https://github.com/peteriman)
@@ -34,8 +43,8 @@
 - Updated dependencies
   - [should-util from 1.0.0 to 1.0.1](https://github.com/nomiddlename/date-format/pull/31) - thanks [@peteriman](https://github.com/peteriman)
   - [eslint from 5.16.0 to 8.6.0 and mocha from 5.2.0 to 9.1.3](https://github.com/nomiddlename/date-format/pull/30) - thanks [@peteriman](https://github.com/peteriman)
-  - [acorn from 6.2.0 to 6.4.2](https://github.com/nomiddlename/date-format/pull/29)
-  - [lodash from 4.17.14 to 4.17.21](https://github.com/nomiddlename/date-format/pull/26)
+  - [acorn from 6.2.0 to 6.4.2](https://github.com/nomiddlename/date-format/pull/29) - thanks [@Dependabot](https://github.com/dependabot)
+  - [lodash from 4.17.14 to 4.17.21](https://github.com/nomiddlename/date-format/pull/26) - thanks [@Dependabot](https://github.com/dependabot)
 
 ## Previous versions
 
