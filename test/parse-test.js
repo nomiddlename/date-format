@@ -58,7 +58,7 @@ describe("dateFormat.parse", function() {
   });
 
   describe("with a partial pattern", function() {
-    var testDate = new Date();
+    var testDate = dateFormat.now() || new Date();
     dateFormat.now = function() {
       return testDate;
     };
