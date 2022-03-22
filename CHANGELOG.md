@@ -1,5 +1,10 @@
 # date-format Changelog
 
+## 4.0.6
+
+- [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/52) - thanks [@peteriman](https://github.com/peteriman)
+  - package-lock.json
+
 ## 4.0.5
 
 - [chore(test): better test coverage instead of ignoring](https://github.com/nomiddlename/date-format/pull/48) - thanks [@peteriman](https://github.com/peteriman)
