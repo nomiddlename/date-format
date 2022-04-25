@@ -1,5 +1,9 @@
 # date-format Changelog
 
+## 4.0.9
+
+- is exactly the same as 4.0.8 and is a re-published 4.0.8 to npm
+
 ## 4.0.8
 
 - [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/60) - thanks [@peteriman](https://github.com/peteriman)
