@@ -1,5 +1,17 @@
 # date-format Changelog
 
+## 4.0.9
+
+- is exactly the same as 4.0.8 and is a re-published 4.0.8 to npm
+
+## 4.0.8
+
+- [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/60) - thanks [@peteriman](https://github.com/peteriman)
+  - chore(dev): bump eslint from 8.13.0 to 8.14.0
+  - updated package-lock.json
+- [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/59) - thanks [@peteriman](https://github.com/peteriman)
+  - package-lock.json
+
 ## 4.0.7
 
 - [chore(dep): updated dependencies](https://github.com/nomiddlename/date-format/pull/57) - thanks [@peteriman](https://github.com/peteriman)
