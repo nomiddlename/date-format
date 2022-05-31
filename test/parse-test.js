@@ -32,7 +32,7 @@ describe("dateFormat.parse", function() {
     var pattern = "yyyy-MM-dd hh:mm:ss.SSSO";
 
     it("should return the correct date if the string matches", function() {
-      var testDate = new Date();
+      var testDate = new Date("2018-09-14 04:10:12.392+1000");
       testDate.setUTCFullYear(2018);
       testDate.setUTCMonth(8);
       testDate.setUTCDate(13);
@@ -67,30 +67,36 @@ describe("dateFormat.parse", function() {
      * If there's no timezone in the format, then we verify against the local date
      */
     function verifyLocalDate(actual, expected) {
-      actual.getFullYear().should.eql(expected.year || testDate.getFullYear());
-      actual.getMonth().should.eql(expected.month || testDate.getMonth());
-      actual.getDate().should.eql(expected.day || testDate.getDate());
-      actual.getHours().should.eql(expected.hours || testDate.getHours());
-      actual.getMinutes().should.eql(expected.minutes || testDate.getMinutes());
-      actual.getSeconds().should.eql(expected.seconds || testDate.getSeconds());
+      function hasValue(obj) {
+        return (obj !== null && obj !== undefined);
+      }
+      actual.getFullYear().should.eql(hasValue(expected.year) ? expected.year : testDate.getFullYear());
+      actual.getMonth().should.eql(hasValue(expected.month) ? expected.month : testDate.getMonth());
+      actual.getDate().should.eql(hasValue(expected.day) ? expected.day : testDate.getDate());
+      actual.getHours().should.eql(hasValue(expected.hours) ? expected.hours : testDate.getHours());
+      actual.getMinutes().should.eql(hasValue(expected.minutes) ? expected.minutes : testDate.getMinutes());
+      actual.getSeconds().should.eql(hasValue(expected.seconds) ? expected.seconds : testDate.getSeconds());
       actual
         .getMilliseconds()
-        .should.eql(expected.milliseconds || testDate.getMilliseconds());
+        .should.eql(hasValue(expected.milliseconds) ? expected.milliseconds : testDate.getMilliseconds());
     }
 
     /**
      * If a timezone is specified, let's verify against the UTC time it is supposed to be
      */
     function verifyDate(actual, expected) {
-      actual.getUTCFullYear().should.eql(expected.year || testDate.getUTCFullYear());
-      actual.getUTCMonth().should.eql(expected.month || testDate.getUTCMonth());
-      actual.getUTCDate().should.eql(expected.day || testDate.getUTCDate());
-      actual.getUTCHours().should.eql(expected.hours || testDate.getUTCHours());
-      actual.getUTCMinutes().should.eql(expected.minutes || testDate.getUTCMinutes());
-      actual.getUTCSeconds().should.eql(expected.seconds || testDate.getUTCSeconds());
+      function hasValue(obj) {
+        return (obj !== null && obj !== undefined);
+      }
+      actual.getUTCFullYear().should.eql(hasValue(expected.year) ? expected.year : testDate.getUTCFullYear());
+      actual.getUTCMonth().should.eql(hasValue(expected.month) ? expected.month : testDate.getUTCMonth());
+      actual.getUTCDate().should.eql(hasValue(expected.day) ? expected.day : testDate.getUTCDate());
+      actual.getUTCHours().should.eql(hasValue(expected.hours) ? expected.hours : testDate.getUTCHours());
+      actual.getUTCMinutes().should.eql(hasValue(expected.minutes) ? expected.minutes : testDate.getUTCMinutes());
+      actual.getUTCSeconds().should.eql(hasValue(expected.seconds) ? expected.seconds : testDate.getUTCSeconds());
       actual
         .getMilliseconds()
-        .should.eql(expected.milliseconds || testDate.getMilliseconds());
+        .should.eql(hasValue(expected.milliseconds) ? expected.milliseconds : testDate.getMilliseconds());
     }
 
     it("should return a date with missing values defaulting to current time", function() {
@@ -168,6 +174,43 @@ describe("dateFormat.parse", function() {
         var date = dateFormat.parse("hh:mm O", "05:23 Z");
         verifyDate(date, { hours: 5, minutes: 23 });
       });
+    });
+  });
+
+  describe("with a partial pattern and last day of month", function() {
+    var testDate = new Date("2022-05-31T00:00:00.000Z");
+
+    /**
+     * If there's no timezone in the format, then we verify against the local date
+     */
+    function verifyLocalDate(actual, expected) {
+      function hasValue(obj) {
+        return (obj !== null && obj !== undefined);
+      }
+      actual.getFullYear().should.eql(hasValue(expected.year) ? expected.year : testDate.getFullYear());
+      actual.getMonth().should.eql(hasValue(expected.month) ? expected.month : testDate.getMonth());
+      actual.getDate().should.eql(hasValue(expected.day) ? expected.day : testDate.getDate());
+      actual.getHours().should.eql(hasValue(expected.hours) ? expected.hours : testDate.getHours());
+      actual.getMinutes().should.eql(hasValue(expected.minutes) ? expected.minutes : testDate.getMinutes());
+      actual.getSeconds().should.eql(hasValue(expected.seconds) ? expected.seconds : testDate.getSeconds());
+      actual
+        .getMilliseconds()
+        .should.eql(hasValue(expected.milliseconds) ? expected.milliseconds : testDate.getMilliseconds());
+    }
+
+    it("should return a date with missing values defaulting to current time", function() {
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-01-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 0, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-02-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 1, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-03-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 2, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-04-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 3, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-05-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 4, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-06-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 5, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-07-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 6, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-08-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 7, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-09-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 8, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-10-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 9, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-11-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 10, day: 1});
+      verifyLocalDate(dateFormat.parse('yyyy-MM-dd', '2022-12-01', new Date("2022-05-31T00:00:00.000Z")), { year: 2022, month: 11, day: 1});
     });
   });
 
