@@ -67,30 +67,36 @@ describe("dateFormat.parse", function() {
      * If there's no timezone in the format, then we verify against the local date
      */
     function verifyLocalDate(actual, expected) {
-      actual.getFullYear().should.eql(expected.year || testDate.getFullYear());
-      actual.getMonth().should.eql(expected.month || testDate.getMonth());
-      actual.getDate().should.eql(expected.day || testDate.getDate());
-      actual.getHours().should.eql(expected.hours || testDate.getHours());
-      actual.getMinutes().should.eql(expected.minutes || testDate.getMinutes());
-      actual.getSeconds().should.eql(expected.seconds || testDate.getSeconds());
+      function hasValue(obj) {
+        return (obj !== null && obj !== undefined);
+      }
+      actual.getFullYear().should.eql(hasValue(expected.year) ? expected.year : testDate.getFullYear());
+      actual.getMonth().should.eql(hasValue(expected.month) ? expected.month : testDate.getMonth());
+      actual.getDate().should.eql(hasValue(expected.day) ? expected.day : testDate.getDate());
+      actual.getHours().should.eql(hasValue(expected.hours) ? expected.hours : testDate.getHours());
+      actual.getMinutes().should.eql(hasValue(expected.minutes) ? expected.minutes : testDate.getMinutes());
+      actual.getSeconds().should.eql(hasValue(expected.seconds) ? expected.seconds : testDate.getSeconds());
       actual
         .getMilliseconds()
-        .should.eql(expected.milliseconds || testDate.getMilliseconds());
+        .should.eql(hasValue(expected.milliseconds) ? expected.milliseconds : testDate.getMilliseconds());
     }
 
     /**
      * If a timezone is specified, let's verify against the UTC time it is supposed to be
      */
     function verifyDate(actual, expected) {
-      actual.getUTCFullYear().should.eql(expected.year || testDate.getUTCFullYear());
-      actual.getUTCMonth().should.eql(expected.month || testDate.getUTCMonth());
-      actual.getUTCDate().should.eql(expected.day || testDate.getUTCDate());
-      actual.getUTCHours().should.eql(expected.hours || testDate.getUTCHours());
-      actual.getUTCMinutes().should.eql(expected.minutes || testDate.getUTCMinutes());
-      actual.getUTCSeconds().should.eql(expected.seconds || testDate.getUTCSeconds());
+      function hasValue(obj) {
+        return (obj !== null && obj !== undefined);
+      }
+      actual.getUTCFullYear().should.eql(hasValue(expected.year) ? expected.year : testDate.getUTCFullYear());
+      actual.getUTCMonth().should.eql(hasValue(expected.month) ? expected.month : testDate.getUTCMonth());
+      actual.getUTCDate().should.eql(hasValue(expected.day) ? expected.day : testDate.getUTCDate());
+      actual.getUTCHours().should.eql(hasValue(expected.hours) ? expected.hours : testDate.getUTCHours());
+      actual.getUTCMinutes().should.eql(hasValue(expected.minutes) ? expected.minutes : testDate.getUTCMinutes());
+      actual.getUTCSeconds().should.eql(hasValue(expected.seconds) ? expected.seconds : testDate.getUTCSeconds());
       actual
         .getMilliseconds()
-        .should.eql(expected.milliseconds || testDate.getMilliseconds());
+        .should.eql(hasValue(expected.milliseconds) ? expected.milliseconds : testDate.getMilliseconds());
     }
 
     it("should return a date with missing values defaulting to current time", function() {
