@@ -32,7 +32,7 @@ describe("dateFormat.parse", function() {
     var pattern = "yyyy-MM-dd hh:mm:ss.SSSO";
 
     it("should return the correct date if the string matches", function() {
-      var testDate = new Date("2018-09-14 04:10:12.392+1000");
+      var testDate = new Date(0);
       testDate.setUTCFullYear(2018);
       testDate.setUTCMonth(8);
       testDate.setUTCDate(13);
@@ -217,7 +217,7 @@ describe("dateFormat.parse", function() {
   describe("with a date formatted by this library", function() {
     describe("should format and then parse back to the same date", function() {
       function testDateInitWithUTC() {
-        var td = new Date();
+        var td = new Date(0);
         td.setUTCFullYear(2018);
         td.setUTCMonth(8);
         td.setUTCDate(13);
