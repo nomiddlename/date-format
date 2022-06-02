@@ -1,5 +1,14 @@
 # date-format Changelog
 
+## 4.0.11
+
+- [fix: date parsing errors (wrong month due to days overflow)](https://github.com/nomiddlename/date-format/pull/68) - thanks [@peteriman](https://github.com/peteriman)
+  - [test: use new Date(0) instead of new Date() before setting every field]() - thanks [@peteriman](https://github.com/peteriman)
+- [chore(deps-dev): updated dependencies](https://github.com/nomiddlename/date-format/pull/70) - thanks [@peteriman](https://github.com/peteriman)
+  - chore(deps-dev): bump eslint from 8.15.0 to 8.16.0
+  - chore(deps-dev): bump eslint-plugin-mocha from 10.0.4 to 10.0.5
+  - chore(deps-dev): updated package-lock.json
+
 ## 4.0.10
 
 - [chore(deps-dev): updated dependencies](https://github.com/nomiddlename/date-format/pull/66) - thanks [@peteriman](https://github.com/peteriman)
