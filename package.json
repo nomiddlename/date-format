@@ -29,10 +29,10 @@
   "readmeFilename": "README.md",
   "gitHead": "bf59015ab6c9e86454b179374f29debbdb403522",
   "devDependencies": {
-    "eslint": "^8.16.0",
-    "eslint-plugin-mocha": "^10.0.5",
-    "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-mocha": "^6.3.0",
+    "mocha": "^6.2.3",
+    "nyc": "^14.1.1",
     "should": "^13.2.3"
   },
   "nyc": {
