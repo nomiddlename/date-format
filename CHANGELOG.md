@@ -2,14 +2,14 @@
 
 ## 4.0.13
 
-- [ci: added tests for 4.x, 6.x, 8.x, 10.x, 18.x](https://github.com/nomiddlename/date-format/pull/75) - thanks [@lamweili](https://github.com/lamweili)
+- [ci: added tests for Node.js 4.x, 6.x, 8.x, 10.x, 18.x](https://github.com/nomiddlename/date-format/pull/75) - thanks [@lamweili](https://github.com/lamweili)
   - [chore(deps-dev): bump hosted-git-info from 2.6.0 to 2.8.9](https://github.com/nomiddlename/date-format/pull/76) - thanks [@Dependabot](https://github.com/dependabot)
   - [chore(deps-dev): bump handlebars from 4.0.11 to 4.7.7 ](https://github.com/nomiddlename/date-format/pull/77) - thanks [@Dependabot](https://github.com/dependabot)
   - [chore(deps-dev): bump y18n from 3.2.1 to 3.2.2](https://github.com/nomiddlename/date-format/pull/78) - thanks [@Dependabot](https://github.com/dependabot)
 
 ## 4.0.12
 
-- [ci: added tests for 8.x, 10.x, 18.x](https://github.com/nomiddlename/date-format/pull/73) - thanks [@lamweili](https://github.com/lamweili)
+- [ci: added tests for Node.js 8.x, 10.x, 18.x](https://github.com/nomiddlename/date-format/pull/73) - thanks [@lamweili](https://github.com/lamweili)
 - [docs: renamed peteriman to lamweili](https://github.com/nomiddlename/date-format/pull/72) - thanks [@lamweili](https://github.com/lamweili)
 
 ## 4.0.11
