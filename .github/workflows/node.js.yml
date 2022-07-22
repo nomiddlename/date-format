@@ -16,8 +16,13 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x, 14.x, 16.x, 18.x]
+        node-version: [4.x, 6.x, 8.x, 10.x, 12.x, 14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        include:
+          - node-version: 4.x
+            npm: 5.x
+          - node-version: 6.x
+            npm: 6.x
 
     steps:
     - uses: actions/checkout@v2
@@ -26,6 +31,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - if: ${{ matrix.npm }}
+      run: npm install -g npm@${{ matrix.npm }}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - if: ${{ matrix.npm != '5.x' }} 
+      run: npm audit
+      env:
+        NODE_ENV: production
