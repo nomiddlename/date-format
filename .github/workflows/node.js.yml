@@ -36,3 +36,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - if: ${{ matrix.npm != '5.x' }} 
+      run: npm audit
+      env:
+        NODE_ENV: production
