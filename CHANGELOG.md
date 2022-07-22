@@ -1,5 +1,10 @@
 # date-format Changelog
 
+## 4.0.12
+
+- [ci: added tests for 8.x, 10.x, 18.x](https://github.com/nomiddlename/date-format/pull/73) - thanks [@lamweili](https://github.com/lamweili)
+- [docs: renamed peteriman to lamweili](https://github.com/nomiddlename/date-format/pull/72) - thanks [@lamweili](https://github.com/lamweili)
+
 ## 4.0.11
 
 - [fix: date parsing errors (wrong month due to days overflow)](https://github.com/nomiddlename/date-format/pull/68) - thanks [@lamweili](https://github.com/lamweili)
