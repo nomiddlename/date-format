@@ -1,13 +1,13 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "master" ]
   workflow_dispatch: {}
 
 jobs:
@@ -15,25 +15,69 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        shell: bash
+
     strategy:
       matrix:
         node-version: [4.x, 6.x, 8.x, 10.x, 12.x, 14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         include:
           - node-version: 4.x
-            npm: 5.x
+            npm-i: eslint@4.x eslint-plugin-mocha@4.x mocha@5.x nyc@11.x
+
           - node-version: 6.x
-            npm: 6.x
+            npm-i: eslint@5.x eslint-plugin-mocha@5.x mocha@6.x nyc@14.x
+
+          - node-version: 8.x
+            npm-i: eslint@6.x eslint-plugin-mocha@6.x mocha@7.x
+
+          - node-version: 10.x
+            npm-i: eslint@7.x eslint-plugin-mocha@8.x mocha@8.x
+
+          - node-version: 12.x
+            npm-i: eslint-plugin-mocha@9.x mocha@9.x
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - if: ${{ matrix.npm }}
-      run: npm install -g npm@${{ matrix.npm }}
+
+    - name: Configure npm
+      run: npm config set loglevel error
+
+    - name: Get npm version
+      id: npm-version
+      run: |
+        npm -v
+        npmMajorVer=$(npm -v | cut -d. -f1)
+        echo "::set-output name=major::$npmMajorVer"
+        if [ $npmMajorVer -le 5 ]; then
+          echo "::set-output name=install::npm install"
+        else 
+          echo "::set-output name=install::npm ci"
+        fi
+
+    - name: Install downgraded modules ${{ matrix.npm-i }}
+      run: |
+        npm install --save-dev ${{ matrix.npm-i }}
+        if [ ${{ steps.npm-version.outputs.major }} -le 5 ]; then
+          npm install
+        fi
+      if: matrix.npm-i != ''
+
+    - run: npm install
+      if: matrix.npm-i == '' && steps.npm-version.outputs.major <= 5
+
     - run: npm ci
+      if: matrix.npm-i == '' && steps.npm-version.outputs.major > 5
+
+    - name: List dependencies
+      run: npm ls --depth=0 --dev && npm ls --depth=0 --prod
+
     - run: npm run build --if-present
     - run: npm test
