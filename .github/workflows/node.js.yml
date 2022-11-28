@@ -25,19 +25,19 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         include:
           - node-version: 4.x
-            npm-i: eslint@4.x eslint-plugin-mocha@4.x mocha@5.x nyc@11.x
+            npm-i: "eslint@4.x eslint-plugin-mocha@4.x mocha@5.x nyc@11.x"
 
           - node-version: 6.x
-            npm-i: eslint@5.x eslint-plugin-mocha@5.x mocha@6.x nyc@14.x
+            npm-i: "eslint@5.x eslint-plugin-mocha@5.x mocha@6.x nyc@14.x"
 
           - node-version: 8.x
-            npm-i: eslint@6.x eslint-plugin-mocha@6.x mocha@7.x
+            npm-i: "eslint@6.x eslint-plugin-mocha@6.x mocha@7.x"
 
           - node-version: 10.x
-            npm-i: eslint@7.x eslint-plugin-mocha@8.x mocha@8.x
+            npm-i: "eslint@7.x eslint-plugin-mocha@8.x mocha@8.x"
 
           - node-version: 12.x
-            npm-i: eslint-plugin-mocha@9.x mocha@9.x
+            npm-i: "eslint-plugin-mocha@9.x mocha@9.x"
 
     steps:
     - uses: actions/checkout@v3
